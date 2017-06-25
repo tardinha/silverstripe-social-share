@@ -5,14 +5,14 @@ class SocialSharePageExtension extends SiteTreeExtension {
 		"ShowSharingLinks" => "Boolean",
 	);
 	
-	public function getSocialShareConfig() {
-	    if (class_exists('Multisites') && !Config::inst()->get('SocialMetaConfigExtension', 'multisites_enable_global_settings')) {
-	        return Multisites::inst()->getCurrentSite();
-	    } else {
-	        return SiteConfig::current_site_config();
-	    }
-	    return null;
-	}
+// 	public function getSocialShareConfig() {
+// 	    if (class_exists('Multisites') && !Config::inst()->get('SocialMetaConfigExtension', 'multisites_enable_global_settings')) {
+// 	        return Multisites::inst()->getCurrentSite();
+// 	    } else {
+// 	        return SiteConfig::current_site_config();
+// 	    }
+// 	    return null;
+// 	}
 
 	public function updateSettingsFields(&$fields) {
 		$fields->addFieldToTab(
