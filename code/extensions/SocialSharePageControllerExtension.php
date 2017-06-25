@@ -2,6 +2,15 @@
 
 class SocialSharePageControllerExtension extends Extension {
 	
+	public function getSocialShareConfig() {
+	    if (class_exists('Multisites') && !Config::inst()->get('SocialMetaConfigExtension', 'multisites_enable_global_settings')) {
+	        return Multisites::inst()->getCurrentSite();
+	    } else {
+	        return SiteConfig::current_site_config();
+	    }
+	    return null;
+	}
+    
 	public function onAfterInit() {
 	    
 	    Requirements::css('social-share/css/social-share.css');
